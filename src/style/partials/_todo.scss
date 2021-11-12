@@ -2,20 +2,21 @@
   .todo {
     display: flex;
     position: relative;
-    margin: 1em auto;
+    margin: 2em auto;
     width: 80%;
     background-color: $secondary-colour;
     &__title {
-      font-size: 3em;
+      font-size: 5em;
       text-align: center;
+      color: white;
     }
     &__checkbox {
       -webkit-appearance: none;
       appearance: none;
 
-      margin: 10px;
-      height: 40px;
-      width: 40px;
+      margin: 20px;
+      height: 60px;
+      width: 60px;
       border: 2px solid white;
       background: none;
       color: white;
@@ -28,38 +29,92 @@
           margin: 0 auto;
           background: none;
           border: none;
-          font-size: 2em;
+          font-size: 3em;
           height: 40px;
         }
       }
     }
     &__text {
-      margin: 10px;
-      height: 40px;
+      margin: 20px;
+      height: 60px;
       display: inline-block;
-      font-size: 2em;
+      font-size: 3em;
       color: white;
     }
     &__btn {
       position: absolute;
-      top: 15px;
-      right: 15px;
+      top: 20px;
+      right: 25px;
       float: right;
       width: 50px;
-      height: 30px;
+      height: 50px;
 
       background: none;
       border: none;
       &__icon {
-        font-size: 2.5em;
+        font-size: 3.5em;
         color: white;
         background: none;
         border: none;
+      }
+    }
+    &__form {
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+      &__input {
+        margin: 20px 5px;
+        background: none;
+        width: 80%;
+        font-size: 2em;
+        height: 66px;
+        border: 2px solid $secondary-colour;
+        border-radius: 10px;
+        &::placeholder {
+          font-family: $main-font;
+          font-weight: 400;
+          color: white;
+          opacity: 0.6;
+          padding-left: 1em;
+        }
+      }
+      &__btn {
+        margin: 20px;
+        border: none;
+        height: 70px;
+        padding: 10px 0;
+        width: 40%;
+        background: $secondary-colour;
+        color: white;
+        border-radius: 10px;
+        &::before {
+          content: "Add task";
+          font-weight: 100;
+          font-size: 2.5em;
+        }
       }
     }
   }
   .completed {
     text-decoration: line-through;
     opacity: 0.4;
+  }
+}
+
+@media screen and (min-width: 1023px) {
+  .todo {
+    width: 60%;
+    &__form {
+      width: 60%;
+    }
+  }
+}
+
+@media screen and (min-width: 1339px) {
+  .todo {
+    width: 50%;
+    &__form {
+      width: 50%;
+    }
   }
 }
