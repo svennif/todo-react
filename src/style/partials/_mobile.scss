@@ -79,6 +79,10 @@
           color: white;
           opacity: 0.6;
         }
+        &:focus {
+          color: white;
+          font-family: $main-font;
+        }
       }
       &__btn {
         margin: 10px;
