@@ -1,0 +1,104 @@
+@media screen and (max-width: 425px) {
+  .todo {
+    display: flex;
+    position: relative;
+    background-color: $secondary-colour;
+    width: 80%;
+    margin: 1em auto;
+    border-radius: 20px 0px 20px 20px;
+    &__title {
+      font-weight: 400;
+      font-size: 3em;
+      color: white;
+      text-align: center;
+    }
+    &__checkbox {
+      -webkit-appearance: none;
+      appearance: none;
+      background-color: $secondary-colour;
+
+      margin: 10px;
+      height: 40px;
+      width: 40px;
+      border: 2px solid white;
+      background: none;
+      color: white;
+      border-radius: 10px;
+      display: flex;
+      &:checked {
+        opacity: 0.7;
+        &::before {
+          content: "\2716";
+          margin: 0 auto;
+          background: none;
+          border: none;
+          font-size: 2em;
+          height: 40px;
+        }
+      }
+    }
+    &__text {
+      margin: 10px;
+      height: 40px;
+      font-size: 2em;
+      display: inline-block;
+      color: white;
+    }
+    &__btn {
+      position: absolute;
+      float: right;
+      top: -10px;
+      right: -15px;
+      color: $tertiary-colour;
+      background: none;
+      border: none;
+      &__icon {
+        height: 25px;
+        width: 25px;
+        background-color: white;
+        border-radius: 15px;
+      }
+    }
+    &__form {
+      border-radius: 20px 0px 20px 20px;
+      border: 3px solid $secondary-colour;
+      width: 80%;
+      margin: 0 auto;
+      display: flex;
+
+      &__input {
+        margin: 10px;
+        background: none;
+        border: none;
+        width: 80%;
+        font-size: 1.5em;
+        height: 40px;
+        &::placeholder {
+          font-family: $main-font;
+          font-weight: 400;
+          color: white;
+          opacity: 0.6;
+        }
+      }
+      &__btn {
+        margin: 10px;
+        height: 40px;
+        width: 40px;
+        border: 2px solid white;
+        background: none;
+        color: white;
+        border-radius: 10px;
+        &::before {
+          content: "\271A";
+          font-weight: 100;
+          font-size: 2em;
+        }
+      }
+    }
+  }
+
+  .completed {
+    text-decoration: line-through;
+    opacity: 0.4;
+  }
+}

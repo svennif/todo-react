@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { BsXCircleFill } from "react-icons/bs";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -51,17 +52,22 @@ function App() {
 
   return (
     <div className="App">
-      <form onSubmit={handleSubmit}>
-        <input type="text" onChange={(e) => setTodo(e.target.value)} value={todo} />
-        <button type="submit">Add</button>
-      </form>
+      <h1 className="todo__title">My to-do list</h1>
       {todos.map((todo) => (
-        <div key={todo.id}>
-          <div>{todo.text}</div>
-          <button onClick={() => deleteTask(todo.id)}>Delete</button>
-          <input type="checkbox" onChange={() => toggleComplete(todo.id)} checked={todo.completed} />
+        <div key={todo.id} className="todo">
+          <input className="todo__checkbox" type="checkbox" onChange={() => toggleComplete(todo.id)} checked={todo.completed} />
+          <div className={`todo__text ${todo.completed ? "completed" : ""}`}>{todo.text}</div>
+          <button className="todo__btn" onClick={() => deleteTask(todo.id)}>
+            <i>
+              <BsXCircleFill className="todo__btn__icon" />
+            </i>
+          </button>
         </div>
       ))}
+      <form className="todo__form" onSubmit={handleSubmit}>
+        <button className="todo__form__btn" type="submit"></button>
+        <input className="todo__form__input" type="text" placeholder="Add task" onChange={(e) => setTodo(e.target.value)} value={todo} />
+      </form>
     </div>
   );
 }

@@ -1,0 +1,65 @@
+@media screen and (min-width: 426px) {
+  .todo {
+    display: flex;
+    position: relative;
+    margin: 1em auto;
+    width: 80%;
+    background-color: $secondary-colour;
+    &__title {
+      font-size: 3em;
+      text-align: center;
+    }
+    &__checkbox {
+      -webkit-appearance: none;
+      appearance: none;
+
+      margin: 10px;
+      height: 40px;
+      width: 40px;
+      border: 2px solid white;
+      background: none;
+      color: white;
+      border-radius: 10px;
+      display: flex;
+      &:checked {
+        opacity: 0.7;
+        &::before {
+          content: "\2716";
+          margin: 0 auto;
+          background: none;
+          border: none;
+          font-size: 2em;
+          height: 40px;
+        }
+      }
+    }
+    &__text {
+      margin: 10px;
+      height: 40px;
+      display: inline-block;
+      font-size: 2em;
+      color: white;
+    }
+    &__btn {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      float: right;
+      width: 50px;
+      height: 30px;
+
+      background: none;
+      border: none;
+      &__icon {
+        font-size: 2.5em;
+        color: white;
+        background: none;
+        border: none;
+      }
+    }
+  }
+  .completed {
+    text-decoration: line-through;
+    opacity: 0.4;
+  }
+}
